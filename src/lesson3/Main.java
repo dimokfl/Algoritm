@@ -62,17 +62,27 @@ public class Main {
 //        System.out.println(mpq);
 
 
-        MyDeque<Integer> deque = new MyDeque<>();
+//        MyDeque<Integer> deque = new MyDeque<>();
+//
+//        deque.insertLeft(1);
+//        deque.insertLeft(2);
+//        deque.insertRight(33);
+//        deque.insertRight(44);
+//
+//        System.out.println(deque);
+//        deque.removeLeft();
+//        System.out.println(deque);
+//        deque.removeRight();
+//        System.out.println(deque);
 
-        deque.insertLeft(1);
-        deque.insertLeft(2);
-        deque.insertRight(33);
-        deque.insertRight(44);
+        MyStack<Integer> stack = new MyStack<>();
+        String string = "Превед медвед. ДовоД";
+        stack.reversString(string);
 
-        System.out.println(deque);
-        deque.removeLeft();
-        System.out.println(deque);
-        deque.removeRight();
-        System.out.println(deque);
     }
+
+
+
+
+
 }

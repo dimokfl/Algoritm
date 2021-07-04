@@ -6,6 +6,7 @@ public class MyStack<T> {
     private T[] list;
     private int size;
     private final int DEFAULT_CAPACITY = 10;
+    private String str;
 
     public MyStack(int capacity) {
         if (capacity <= 0) {
@@ -20,7 +21,7 @@ public class MyStack<T> {
 
     public void push(T item) {
         if (isFull()) {
-            throw new StackOverflowError();
+            reCapacity((int) (size * 1.5) + 1);
         }
         list[size] = item;
         size++;
@@ -56,5 +57,16 @@ public class MyStack<T> {
         T[] tempArr = (T[]) new Object[newCapacity];
         System.arraycopy(list, 0, tempArr, 0, size);
         list = tempArr;
+    }
+
+    public void reversString(String str) {
+        MyStack<Character> stack = new MyStack<>(str.length());
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            stack.push(ch);
+        }
+        for (int i = 0; i < str.length(); i++) {
+            System.out.print(stack.pop());
+        }
     }
 }
