@@ -14,14 +14,20 @@ public class MyLinkedList<E> implements Iterable<E> {
     }
 
     private class Iter implements Iterator<E>{
+        Node current = new Node(null,first);
+
         @Override
         public boolean hasNext() {
-            return false;
+            return current.getNext() != null;
         }
 
         @Override
         public E next() {
-            return null;
+            if(!hasNext()){
+                throw new NoSuchElementException();
+            }
+            current = current.getNext();
+            return current.getValue();
         }
     }
 
